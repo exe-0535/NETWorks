@@ -3,18 +3,59 @@
         xmlns:vm="using:NETWorks.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="960" d:DesignHeight="540"
+		Width="960" Height="540"
+		MaxHeight="1080" MinHeight="540"
+		MaxWidth="1920" MinWidth="960"
         x:Class="NETWorks.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="NETWorks">
+        Title="NETWorks - pre-alpha">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-	
-    
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+	<Grid RowDefinitions="Auto,*">
+		<!-- Header - basic information about current network -->
+		<Grid Grid.Row="0" ColumnDefinitions="2*,2*,3*,Auto" Height="100" Background="#212236">
+			<!-- Network card description -->
+			<Grid Grid.Column="0">
+				<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+					<Label Foreground="#FFFFFF" FontWeight="Bold" FontSize="16">Card Description</Label>
+				</StackPanel>
+			</Grid>
+			<!-- Basic network information -->
+			<Grid Grid.Column="1" RowDefinitions="*,*,*,*">
+				<StackPanel Grid.Row="0" VerticalAlignment="Center">
+					<Label Foreground="#FFFFFF">CONNECTION TYPE</Label>
+				</StackPanel>
+				<StackPanel Grid.Row="1" VerticalAlignment="Center">
+					<Label Foreground="#FFFFFF">IPV4</Label>
+				</StackPanel>
+				<StackPanel Grid.Row="2" VerticalAlignment="Center">
+					<Label Foreground="#FFFFFF">IPV6</Label>
+				</StackPanel>
+				<StackPanel Grid.Row="3" VerticalAlignment="Center">
+					<Label Foreground="#FFFFFF">SIGNAL POWER CHART</Label>
+				</StackPanel>
+			</Grid>
+			<!-- Placeholder -->
+			<Rectangle Grid.Column="2"></Rectangle>
+			<!-- Light/Dark mode -->
+			<Grid Grid.Column="3" RowDefinitions="*,*" Width="150">
+				<StackPanel Grid.Row="0" Background="Aqua">
+					<Label>Theme</Label>
+				</StackPanel>
+				<StackPanel Grid.Row="1" Background="White">
+					<Label>Dark</Label>
+					<Label>Light</Label>
+				</StackPanel>
+			</Grid>
+		</Grid>
+		<!-- Main grid -->
+		<Grid Grid.Row="1" Background="#2D2E40">
+
+		</Grid>
+	</Grid>
 </Window>

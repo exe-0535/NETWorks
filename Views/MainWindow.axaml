@@ -65,8 +65,107 @@
 			</Grid>
 		</Grid>
 		<!-- Main grid -->
-		<Grid Grid.Row="1" Background="#c1c3c5">
-
+		<Grid Grid.Row="1" Background="#c1c3c5" ColumnDefinitions="2*, *">
+			<Grid Grid.Column="0" Background="#f0f0f1"></Grid>
+			<!-- Main network info datatable -->
+			<Grid Grid.Column="1" ColumnDefinitions="*,*">
+				
+				<Grid Background="#9b9ea2" Margin="10, 10, 0, 10" Grid.Column="0" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*">
+					<StackPanel Grid.Row="0">
+						<Label>Status</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="1">
+						<Label>LongCID</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="2">
+						<Label>Band</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="3">
+						<Label>RSSI</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="4">
+						<Label>RSRQ</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="5">
+						<Label>RSCP</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="6">
+						<Label>Network mode</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="7">
+						<Label>eNBID</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="8">
+						<Label>RSRP</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="9">
+						<Label>SINR</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="10">
+						<Label>PCI</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="11">
+						<Label>ECIO</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="12">
+						<Label>TX Power</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="13">
+						<Label>Data sent</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="14">
+						<Label>Data downloaded</Label>
+					</StackPanel>
+				</Grid>
+				
+				<Grid Background="#6a6d71" Margin="0, 10, 10, 10" Grid.Column="1" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*">
+					<StackPanel Grid.Row="0">
+						<Label>Status VALUE</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="1">
+						<Label>LongCID VALUE</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="2">
+						<Label>Band VALUE</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="3">
+						<Label>RSSI VALUE</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="4">
+						<Label>RSRQ VALUE</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="5">
+						<Label>RSCP VALUE</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="6">
+						<Label>Network mode VALUE</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="7">
+						<Label>eNBID VALUE</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="8">
+						<Label>RSRP VALUE</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="9">
+						<Label>SINR VALUE</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="10">
+						<Label>PCI VALUE</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="11">
+						<Label>ECIO VALUE</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="12">
+						<Label>TX Power VALUE</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="13">
+						<Label>Data sent VALUE</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="14">
+						<Label>Data downloaded VALUE</Label>
+					</StackPanel>
+				</Grid>
+			</Grid>
 		</Grid>
 	</Grid>
 </Window>

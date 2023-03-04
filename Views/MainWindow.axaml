@@ -1,6 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:NETWorks.ViewModels"
+		xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="960" d:DesignHeight="540"
@@ -11,7 +12,19 @@
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="NETWorks - pre-alpha">
+
+	<!-- DataContext and cfg -->
 	
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<Window.DataContext>
+		<vm:MainWindowViewModel/>
+	</Window.DataContext>
+
+	<!-- Window styles -->
+
 	<Window.Styles>
 		<Style Selector="Label">
 			<Setter Property="FontFamily" Value="/Assets/Fonts/SfProRounded.ttf#"/>
@@ -22,10 +35,8 @@
 			<Setter Property="Margin" Value="5"></Setter>
 		</Style>
 	</Window.Styles>
-	
-    <Design.DataContext>
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+
+	<!-- Main App -->
 
 	<Grid RowDefinitions="Auto,*">
 		<!-- Header - basic information about current network -->
@@ -66,7 +77,12 @@
 		</Grid>
 		<!-- Main grid -->
 		<Grid Grid.Row="1" Background="#c1c3c5" ColumnDefinitions="2*, *">
-			<Grid Grid.Column="0" Background="#f0f0f1"></Grid>
+			<!-- -->
+			<Grid Grid.Column="0" Background="#f0f0f1">
+				<lvc:CartesianChart Series="{Binding Series}">
+					
+				</lvc:CartesianChart>
+			</Grid>
 			<!-- Main network info datatable -->
 			<Grid Grid.Column="1" ColumnDefinitions="*,*">
 				

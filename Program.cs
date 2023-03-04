@@ -15,9 +15,13 @@ namespace NETWorks
 
         // Avalonia configuration, don't remove; also used by visual designer.
         public static AppBuilder BuildAvaloniaApp()
-            => AppBuilder.Configure<App>()
+        {
+            GC.KeepAlive(typeof(LiveChartsCore.SkiaSharpView.Avalonia.CartesianChart).Assembly);
+            return AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .LogToTrace()
                 .UseReactiveUI();
+        }
+            
     }
 }

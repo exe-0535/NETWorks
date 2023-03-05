@@ -1,20 +1,26 @@
-﻿using LiveChartsCore;
+﻿using System.Collections.Generic;
+using LiveChartsCore;
+using LiveChartsCore.Measure;
 using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore.SkiaSharpView.Painting;
+using SkiaSharp;
 
 namespace NETWorks.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
-    {   
-        // LiveCharts Constructor
-        public ISeries[] Series { get; set; } = new ISeries[]
-        {
-            new LineSeries<double>
-            {
-                Values = new double[] {2, 1, 3, 5, 3, 4, 6},
-                Fill = null
-            }
-        };
-        
-    
+    {
+        public IEnumerable<ISeries> Series { get; set; }
+        = new GaugeBuilder()
+        .WithMaxColumnWidth(30)
+        .WithBackgroundMaxRadialColumnWidth(30)
+        .WithLabelsSize(20)
+        .WithInnerRadius(30)
+        .WithBackgroundInnerRadius(30)
+        .WithBackground(new SolidColorPaint(SKColors.RoyalBlue))
+        .WithLabelsPosition(PolarLabelsPosition.ChartCenter)
+        .AddValue(30, "DOWNLOAD/UPLOAD", SKColors.DarkSlateBlue, SKColors.Black) // defines the value and the color 
+        .BuildSeries();
+
+
     }
 }

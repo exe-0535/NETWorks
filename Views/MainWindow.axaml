@@ -77,11 +77,35 @@
 		</Grid>
 		<!-- Main grid -->
 		<Grid Grid.Row="1" Background="#c1c3c5" ColumnDefinitions="2*, *">
-			<!-- -->
-			<Grid Grid.Column="0" Background="#f0f0f1">
-				<lvc:CartesianChart Series="{Binding Series}">
+			<!-- Download / Upload Charts -->
+			<Grid Grid.Column="0" Background="#f0f0f1" ColumnDefinitions="*, 2*">
+				<Grid Grid.Column="0" Background="#9b9ea2" RowDefinitions="*,*">
 					
-				</lvc:CartesianChart>
+					<Grid Grid.Row="0" RowDefinitions="*, 4*">
+						<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0">
+							<Label>DOWNLOAD</Label>
+						</Grid>
+						<lvc:PieChart Grid.Row="1"
+						Series="{Binding Series}"
+						InitialRotation="-225"
+						MaxAngle="270"
+						Total="100">
+						</lvc:PieChart>
+					</Grid>
+
+					<Grid Grid.Row="1" RowDefinitions="*, 4*">
+						<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0">
+							<Label>UPLOAD</Label>
+						</Grid>
+						<lvc:PieChart Grid.Row="1"
+						Series="{Binding Series}"
+						InitialRotation="-225"
+						MaxAngle="270"
+						Total="100">
+						</lvc:PieChart>
+					</Grid>
+					
+				</Grid>
 			</Grid>
 			<!-- Main network info datatable -->
 			<Grid Grid.Column="1" ColumnDefinitions="*,*">

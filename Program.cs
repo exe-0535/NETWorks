@@ -17,6 +17,7 @@ namespace NETWorks
         public static AppBuilder BuildAvaloniaApp()
         {
             GC.KeepAlive(typeof(LiveChartsCore.SkiaSharpView.Avalonia.PieChart).Assembly);
+            GC.KeepAlive(typeof(LiveChartsCore.SkiaSharpView.Avalonia.CartesianChart).Assembly);
             return AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .LogToTrace()

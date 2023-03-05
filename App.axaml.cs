@@ -3,6 +3,8 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using NETWorks.ViewModels;
 using NETWorks.Views;
+using System.Management;
+using System;
 
 namespace NETWorks
 {

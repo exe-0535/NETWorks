@@ -38,8 +38,6 @@
 
 	<!-- Main App -->
 
-	<!-- Header -->
-
 	<Grid RowDefinitions="Auto,*">
 		<!-- Header - basic information about current network -->
 		<Grid Grid.Row="0" ColumnDefinitions="2*,2*,3*,Auto" Height="100">

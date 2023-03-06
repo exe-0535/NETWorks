@@ -38,13 +38,21 @@
 
 	<!-- Main App -->
 
+	<!-- Header -->
+
 	<Grid RowDefinitions="Auto,*">
 		<!-- Header - basic information about current network -->
 		<Grid Grid.Row="0" ColumnDefinitions="2*,2*,3*,Auto" Height="100">
 			<!-- Network card description -->
-			<Grid Grid.Column="0" Background="#dfe0e1">
-				<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-					<Label FontSize="16">Card Description</Label>
+			<Grid Grid.Column="0" Background="#dfe0e1" RowDefinitions="*,*,*">
+				<StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,10">
+					<Label FontSize="16">Description</Label>
+				</StackPanel>
+				<StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0">
+					<Label FontSize="14">Manufacturer</Label>
+				</StackPanel>
+				<StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0">
+					<Label FontSize="14">Driver Version</Label>
 				</StackPanel>
 			</Grid>
 			<!-- Basic network information -->
@@ -70,9 +78,9 @@
 			<!-- Placeholder -->
 			<Rectangle Grid.Column="2" Fill="#cecfd1"></Rectangle>
 			<!-- Light/Dark mode -->
-			<Grid Grid.Column="3" RowDefinitions="*,*" Width="150" Background="#b5b7ba">
+			<Grid Grid.Column="3" RowDefinitions="*,2*" Width="150" Background="#b5b7ba">
 				<StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-					<Label FontSize="20" FontWeight="DemiBold">THEME</Label>
+					<Label FontSize="16">THEME</Label>
 				</StackPanel>
 				<StackPanel Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
 					<Button>LIGHT</Button>
@@ -80,6 +88,7 @@
 				</StackPanel>
 			</Grid>
 		</Grid>
+		
 		<!-- Main grid -->
 		<Grid Grid.Row="1" Background="#c1c3c5" ColumnDefinitions="2*, *">
 			<!-- Download / Upload Charts -->

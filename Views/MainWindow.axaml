@@ -35,63 +35,65 @@
 			<Setter Property="Margin" Value="5"></Setter>
 		</Style>
 	</Window.Styles>
-
 	<!-- Main App -->
 
-	<Grid RowDefinitions="Auto,*">
-		<!-- Header - basic information about current network -->
-		<Grid Grid.Row="0" ColumnDefinitions="2*,2*,3*,Auto" Height="100">
-			<!-- Network card description -->
-			<Grid Grid.Column="0" Background="#dfe0e1" RowDefinitions="*,*,*">
-				<StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,10">
-					<Label FontSize="16">Description</Label>
-				</StackPanel>
-				<StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0">
-					<Label FontSize="14">Manufacturer</Label>
-				</StackPanel>
-				<StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0">
-					<Label FontSize="14">Driver Version</Label>
-				</StackPanel>
-			</Grid>
-			<!-- Basic network information -->
-			<Grid Grid.Column="1" RowDefinitions="*,*,*,*" Background="#d6d8d9">
-				<StackPanel Grid.Row="0" VerticalAlignment="Center">
-					<Label>CONNECTION TYPE</Label>
-				</StackPanel>
-				<StackPanel Grid.Row="1" VerticalAlignment="Center">
-					<Label>IPV4</Label>
-				</StackPanel>
-				<StackPanel Grid.Row="2" VerticalAlignment="Center">
-					<Label>IPV6</Label>
-				</StackPanel>
-				<Grid Grid.Row="3" ColumnDefinitions="*,*,*,*,*,5*">
-					<Rectangle Grid.Column="0" Fill="Green" MaxWidth="3" Height="5" VerticalAlignment="Bottom"></Rectangle>
-					<Rectangle Grid.Column="1" Fill="Green" MaxWidth="3" Height="9" VerticalAlignment="Bottom"></Rectangle>
-					<Rectangle Grid.Column="2" Fill="Green" MaxWidth="3" Height="14" VerticalAlignment="Bottom"></Rectangle>
-					<Rectangle Grid.Column="3" Fill="Gray" MaxWidth="3" Height="20" VerticalAlignment="Bottom"></Rectangle>
-					<Rectangle Grid.Column="4" Fill="Gray" MaxWidth="3" Height="27" VerticalAlignment="Bottom"></Rectangle>
-					<Label Grid.Column="5">SIGNAL POWER</Label>
+	<Grid RowDefinitions="Auto,*" Background="#cecfd1">
+		<Border BoxShadow="1 1 20 Black">
+			<!-- Header - basic information about current network -->
+			<Grid Grid.Row="0" ColumnDefinitions="3*,2*,2*,Auto" Height="100">
+				<!-- Network card description -->
+				<Border Background="Black" BoxShadow="inset 1 0 20 Black">
+					<Grid Grid.Column="0" Background="#dfe0e1" RowDefinitions="*,*,*">
+							<StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,8">
+									<Label FontSize="16">Description{}</Label>
+							</StackPanel>
+							<StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0">
+									<Label FontSize="14">Manufacturer: {}</Label>
+							</StackPanel>
+							<StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0">
+									<Label FontSize="14">Driver version: {}</Label>
+							</StackPanel>
+					</Grid>
+				</Border>
+				<!-- Basic network information -->
+				<Grid Grid.Column="1" RowDefinitions="*,*,*,*" Background="#d6d8d9">
+					<StackPanel Grid.Row="0" VerticalAlignment="Center">
+						<Label>CONNECTION TYPE</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="1" VerticalAlignment="Center">
+						<Label>IPV4</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="2" VerticalAlignment="Center">
+						<Label>IPV6</Label>
+					</StackPanel>
+					<Grid Grid.Row="3" ColumnDefinitions="*,*,*,*,*,5*">
+						<Rectangle Grid.Column="0" Fill="Green" MaxWidth="3" Height="5" VerticalAlignment="Bottom"></Rectangle>
+						<Rectangle Grid.Column="1" Fill="Green" MaxWidth="3" Height="9" VerticalAlignment="Bottom"></Rectangle>
+						<Rectangle Grid.Column="2" Fill="Green" MaxWidth="3" Height="14" VerticalAlignment="Bottom"></Rectangle>
+						<Rectangle Grid.Column="3" Fill="Gray" MaxWidth="3" Height="20" VerticalAlignment="Bottom"></Rectangle>
+						<Rectangle Grid.Column="4" Fill="Gray" MaxWidth="3" Height="27" VerticalAlignment="Bottom"></Rectangle>
+						<Label Grid.Column="5">SIGNAL POWER</Label>
+					</Grid>
+				</Grid>
+				<!-- Placeholder -->
+				<Rectangle Grid.Column="2" Fill="#cecfd1"></Rectangle>
+				<!-- Light/Dark mode -->
+				<Grid Grid.Column="3" RowDefinitions="*,2*" Width="150" Background="#b5b7ba">
+					<StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+						<Label FontSize="16">THEME</Label>
+					</StackPanel>
+					<StackPanel Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
+						<Button>LIGHT</Button>
+						<Button>DARK</Button>
+					</StackPanel>
 				</Grid>
 			</Grid>
-			<!-- Placeholder -->
-			<Rectangle Grid.Column="2" Fill="#cecfd1"></Rectangle>
-			<!-- Light/Dark mode -->
-			<Grid Grid.Column="3" RowDefinitions="*,2*" Width="150" Background="#b5b7ba">
-				<StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-					<Label FontSize="16">THEME</Label>
-				</StackPanel>
-				<StackPanel Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
-					<Button>LIGHT</Button>
-					<Button>DARK</Button>
-				</StackPanel>
-			</Grid>
-		</Grid>
-		
+		</Border>
 		<!-- Main grid -->
-		<Grid Grid.Row="1" Background="#c1c3c5" ColumnDefinitions="2*, *">
+		<Grid Grid.Row="1" ColumnDefinitions="2*, *">
 			<!-- Download / Upload Charts -->
-			<Grid Grid.Column="0" Background="#f0f0f1" ColumnDefinitions="*, 2*">
-				<Grid Grid.Column="0" Background="#9b9ea2" RowDefinitions="*,*">
+			<Grid Grid.Column="0" ColumnDefinitions="*, 2*">
+				<Grid Grid.Column="0" RowDefinitions="*,*">
 					
 					<Grid Grid.Row="0" RowDefinitions="*, 4*">
 						<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0">

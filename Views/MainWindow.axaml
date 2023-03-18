@@ -37,7 +37,7 @@
 	</Window.Styles>
 	<!-- Main App -->
 
-	<Grid RowDefinitions="Auto,*" Background="#cecfd1">
+	<Grid RowDefinitions="Auto,*" Background="{Binding Colour}">
 		<Border BoxShadow="1 1 20 Black">
 			<!-- Header - basic information about current network -->
 			<Grid Grid.Row="0" ColumnDefinitions="3*,2*,2*,Auto" Height="100">

@@ -14,6 +14,13 @@ namespace NETWorks.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        public string _colour = "#cecfd1";
+
+        public string Colour { get
+            {
+                return _colour;
+            } 
+        }
         public IEnumerable<ISeries> SeriesDOWNUP { get; set; }
         = new GaugeBuilder()
             .WithMaxColumnWidth(30)
